@@ -3,7 +3,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 const config = require("./config.json");
 
-var fs = require('fs');
+let fs = require('fs');
 var array_coco = fs.readFileSync("list_coco.txt").toString().split("\n");
 var array_coco2 = fs.readFileSync('list_coco2.txt').toString().split("\n");
 var array_pepe = fs.readFileSync('list_pepe.txt').toString().split("\n");
