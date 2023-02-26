@@ -10,8 +10,8 @@ var array_pepe = fs.readFileSync('list_pepe.txt').toString().split("\n");
 var array_elaina = fs.readFileSync('list_elaina.txt').toString().split("\n");
 var array_animal = fs.readFileSync('list_animal.txt').toString().split("\n");
 var array_list = fs.readFileSync('list.txt').toString().split("\n");
-const selectEmoji = "<:select_1:945491737177120798>";
-const listImg = "https://imgur.com/8sWdAGm.png";
+const selectEmoji = "<:select_1:945491737177120798>";//<:select_1:945491737177120798>
+const listImg = "https://imgur.com/lfqu9Iz";
 client.on('ready', () => {
     console.log('Ready');
 });
@@ -30,7 +30,7 @@ var emolist;
 
 
 client.on('messageCreate', async message => {
-    console.log(message);
+    console.log("message -> " + message.content);
     if (message.author.bot == true) {
         //console.log("return"+message.author);
         return;
@@ -69,22 +69,22 @@ client.on('messageCreate', async message => {
     //    message.channel.send("Couldn't find an emoji to paste!");
     //}
     const embed = new MessageEmbed()
-        .setColor('#0099ff')
-        .setTitle('Some title')
-        .setURL('https://discord.js.org/')
+        //.setColor('#0099ff')
+        //.setTitle('Some title')
+        //.setURL('https://discord.js.org/')
         .setAuthor({ name: message.author.username , iconURL: message.author.avatarURL()})
-        .setDescription('Some description here')
-        .setThumbnail('https://i.imgur.com/AfFp7pu.png')
-        .addFields(
-            { name: 'Regular field title', value: 'Some value here' },
-            { name: '\u200B', value: '\u200B' },
-            { name: 'Inline field title', value: 'Some value here', inline: true },
-            { name: 'Inline field title', value: 'Some value here', inline: true },
-        )
-        .addField('Inline field title', 'Some value here', true)
+        //.setDescription('Some description here')
+        //.setThumbnail('https://i.imgur.com/AfFp7pu.png')
+        // .addFields(
+        //     { name: 'Regular field title', value: 'Some value here' },
+        //     { name: '\u200B', value: '\u200B' },
+        //     { name: 'Inline field title', value: 'Some value here', inline: true },
+        //     { name: 'Inline field title', value: 'Some value here', inline: true },
+        // )
+        //.addField('Inline field title', 'Some value here', true)
         .setImage(Url)
-        .setTimestamp()
-        .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+        //.setTimestamp()
+        //.setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
     
     message.channel.send({embeds: [embed]});
     message.delete();
@@ -195,8 +195,7 @@ client.on('messageCreate', async selectEmo => {
             .catch();
         const embed = new MessageEmbed()
         .setAuthor({ name: selectEmo.author.username , iconURL: selectEmo.author.avatarURL()})
-        .setDescription('.')
-        .setImage({proxy_url: select_Url})
+        .setImage(select_Url)
         
         
 
